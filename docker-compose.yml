@@ -1,0 +1,15 @@
+version: "3"
+services:
+  mail-server:
+    container_name: centrumosk_mail_server
+    build:
+      context: .
+      dockerfile: Dockerfile.mailserver
+    networks:
+      - backend
+      - ext
+networks:
+  backend:
+    driver: 'bridge'
+  ext:
+    external: true
